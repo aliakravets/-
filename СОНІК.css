@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* МЕНЮ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: #080808;
+    border-bottom: 2px solid red;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 12px red;
+}
+
+.logo span {
+    color: red;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+/* ГОЛОВНА */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle, #300000, #050505 70%);
+}
+
+.subtitle {
+    color: #aaa;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 12vw, 120px);
+    color: red;
+    text-shadow: 0 0 15px red, 0 0 40px darkred;
+    animation: glitch 2s infinite;
+}
+
+.hero h3 {
+    font-size: 25px;
+    letter-spacing: 8px;
+    margin-top: 15px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 16px 40px;
+    color: white;
+    background: #900000;
+    border: 1px solid red;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: red;
+    box-shadow: 0 0 25px red;
+    transform: scale(1.08);
+}
+
+/* СЕКЦІЇ */
+
+section {
+    padding: 90px 10%;
+}
+
+h2 {
+    color: red;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 12px red;
+}
+
+.content {
+    max-width: 850px;
+    margin: auto;
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+/* КАРТКИ ПЕРСОНАЖІВ */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #111;
+    border: 1px solid #650000;
+    padding: 30px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: red;
+    box-shadow: 0 0 25px red;
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* ГАЛЕРЕЯ */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    min-height: 180px;
+    background: linear-gradient(145deg, #250000, #090000);
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    transition: 0.3s;
+}
+
+.gallery-item p {
+    color: white;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px red;
+}
+
+/* ПОПЕРЕДЖЕННЯ */
+
+.warning {
+    text-align: center;
+    background: #240000;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.warning p {
+    color: #ff5555;
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin: 15px;
+}
+
+/* ПІДВАЛ */
+
+footer {
+    padding: 35px;
+    text-align: center;
+    background: black;
+    color: #888;
+    line-height: 2;
+    border-top: 1px solid darkred;
+}
+
+/* АНІМАЦІЯ GLITCH */
+
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0);
+    }
+
+    92% {
+        transform: translate(-4px, 2px);
+    }
+
+    94% {
+        transform: translate(4px, -2px);
+    }
+
+    96% {
+        transform: translate(-2px, -1px);
+    }
+}
+
+/* АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ */
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+}
